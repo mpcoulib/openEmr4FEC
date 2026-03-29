@@ -160,6 +160,10 @@ WHERE `form_id` = 'DEM' AND `field_id` = 'genericval2';
 -- 6. Hide US-specific / irrelevant fields
 -- ============================================================
 
+-- Fix pricelevel to Optional (OpenEMR default is Unused)
+UPDATE `layout_options` SET `uor` = 1
+WHERE `form_id` = 'DEM' AND `field_id` = 'pricelevel';
+
 UPDATE `layout_options` SET `uor` = 0
 WHERE `form_id` = 'DEM' AND `field_id` IN (
     -- Western-specific identity fields not used at FEC
@@ -167,6 +171,14 @@ WHERE `form_id` = 'DEM' AND `field_id` IN (
     'sex_identified',
     'sexual_orientation',
     'pronoun',
+    -- US immunization registry / publicity / protection fields
+    'imm_reg_status', 'imm_reg_stat', 'imm_reg_stat2',
+    'publicity_code', 'publicity_code_eff',
+    'protect_individual', 'prot_indiv_eff_date',
+    -- Deceased fields (not needed at registration)
+    'deceased_date', 'deceased_reason',
+    -- Care team (not used at FEC)
+    'care_team',
     -- US HIPAA compliance fields (not applicable in Ghana)
     'hipaa_notice',
     'hipaa_voice',
