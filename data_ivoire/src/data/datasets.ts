@@ -1,0 +1,26 @@
+import type { Dataset } from '../types'
+
+export const datasets: Dataset[] = [
+  { id: 1,  title: "Organisation Administrative Territoriale de la Côte d'Ivoire",   org: 'ANSTAT / Min. Intérieur',                    category: 'Administration', categoryColor: 'blue',   views: 477, downloads: 329 },
+  { id: 2,  title: 'Carte des sous-préfectures de Côte d\'Ivoire',                   org: 'ANSTAT',                                     category: 'Cartographie',   categoryColor: 'teal',   views: 231, downloads: 118 },
+  { id: 3,  title: 'Carte des départements de Côte d\'Ivoire',                       org: 'ANSTAT',                                     category: 'Cartographie',   categoryColor: 'teal',   views: 175, downloads: 79  },
+  { id: 4,  title: 'Population électorale 2025 par District et Région',              org: 'Commission Électorale Indépendante',          category: 'Pop. électorale',categoryColor: 'orange', views: 160, downloads: 161 },
+  { id: 5,  title: 'Résultats des élections régionales 2023',                        org: 'Commission Électorale Indépendante',          category: 'Élections',      categoryColor: 'orange', views: 36,  downloads: 57  },
+  { id: 6,  title: 'Dotations des communes — Loi de finances Annexe 8',              org: "Ministère de l'Économie et des Finances",     category: 'Budget',         categoryColor: 'blue',   views: 125, downloads: 123 },
+  { id: 7,  title: 'Naissances déclarées 2024 par sexe et sous-préfecture',          org: 'ANSTAT',                                     category: 'Société',        categoryColor: 'teal',   views: 48,  downloads: 49  },
+  { id: 8,  title: "Recensement Général de la Population et de l'Habitat 2021",      org: 'Institut National de la Statistique',        category: 'Démographie',    categoryColor: 'green',  views: 135, downloads: 117 },
+  { id: 9,  title: 'Carte des régions de Côte d\'Ivoire',                            org: 'ANSTAT',                                     category: 'Cartographie',   categoryColor: 'teal',   views: 54,  downloads: 37  },
+  { id: 10, title: 'Carte des districts',                                            org: 'ANSTAT',                                     category: 'Cartographie',   categoryColor: 'teal',   views: 31,  downloads: 21  },
+  { id: 11, title: 'Classement des écoles au BAC 2025',                              org: 'Direction des Examens et Concours (DECO)',   category: 'Éducation',      categoryColor: 'green',  views: 65,  downloads: 46  },
+  { id: 12, title: 'Classement établissements au CEPE 2025',                         org: 'Direction des Examens et Concours (DECO)',   category: 'Éducation',      categoryColor: 'green',  views: 23,  downloads: 18  },
+  { id: 13, title: "Carte d'Abidjan — communes",                                     org: 'OpenStreetMap / ANSTAT',                     category: 'Cartographie',   categoryColor: 'teal',   views: 75,  downloads: 49  },
+  { id: 14, title: 'Classement des collèges au BEPC 2025',                           org: 'Direction des Examens et Concours (DECO)',   category: 'Éducation',      categoryColor: 'green',  views: 22,  downloads: 12  },
+  { id: 15, title: 'Liste des députés ivoiriens — mandature 2021–2026',              org: "Assemblée nationale de Côte d'Ivoire",       category: 'Société',        categoryColor: 'teal',   views: 21,  downloads: 10  },
+  { id: 16, title: 'Dotations de l\'État aux régions et districts',                  org: "Ministère de l'Économie et des Finances",    category: 'Budget',         categoryColor: 'blue',   views: 29,  downloads: 20  },
+  { id: 17, title: 'Répertoire national des élus',                                   org: "Ministère de l'Intérieur et de la Sécurité", category: 'Société',        categoryColor: 'teal',   views: 36,  downloads: 24  },
+  { id: 18, title: 'Population électorale par Bureau de vote et Lieu de vote',       org: 'Commission Électorale Indépendante',          category: 'Pop. électorale',categoryColor: 'orange', views: 31,  downloads: 32  },
+  { id: 19, title: "Conseillers municipaux — District d'Abidjan",                    org: "Ministère de l'Intérieur et de la Sécurité", category: 'Société',        categoryColor: 'teal',   views: 9,   downloads: 4   },
+  { id: 20, title: 'Loi de finances 2026',                                           org: "Ministère de l'Économie et des Finances",    category: 'Budget',         categoryColor: 'blue',   views: 78,  downloads: 85  },
+  { id: 21, title: 'Résultats des élections législatives du 27 décembre 2025',       org: 'Commission Électorale Indépendante',          category: 'Élections',      categoryColor: 'orange', views: 11,  downloads: 5   },
+  { id: 22, title: "Base de données des Associations d'Étudiants Ivoiriens en France", org: 'FASESIF',                                  category: 'Société',        categoryColor: 'teal',   views: 12,  downloads: 5   },
+]
