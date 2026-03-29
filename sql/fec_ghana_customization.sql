@@ -412,3 +412,21 @@ WHERE `form_id` = 'DEM' AND `field_id` = 'guardianpostalcode';
 -- Set Next of Kin country default to Ghana
 UPDATE `layout_options` SET `default_value` = 'GH'
 WHERE `form_id` = 'DEM' AND `field_id` = 'guardiancountry';
+
+-- ============================================================
+-- 12. Fix column widths for two-column row layout
+--     (billing_note and genericname1/2 had datacols=3 which
+--      caused them to overflow their row and wrap incorrectly)
+-- ============================================================
+
+-- NHIS/Insurance No.: narrow to 1 data col so it shares a row with Payment Type
+UPDATE `layout_options` SET `datacols` = 1
+WHERE `form_id` = 'DEM' AND `field_id` = 'billing_note';
+
+-- Occupation: set to 1 title + 1 data col so it pairs with Referred By
+UPDATE `layout_options` SET `titlecols` = 1, `datacols` = 1
+WHERE `form_id` = 'DEM' AND `field_id` = 'genericname1';
+
+-- Referred By: ensure it also occupies 1 title + 1 data col (no appending inline)
+UPDATE `layout_options` SET `titlecols` = 1, `datacols` = 1
+WHERE `form_id` = 'DEM' AND `field_id` = 'genericname2';
