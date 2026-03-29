@@ -60,23 +60,25 @@ This step configures the patient form with Ghana-specific fields (regions, NHIS,
 
 **Mac:**
 ```bash
-docker compose exec mysql mariadb -u openemr -popenemr openemr \
-  < /path/to/openEmr4FEC/OpenEMR_for_FEC/sql/fec_ghana_customization.sql
+# Run from the root of the cloned repo (openEmr4FEC/)
+docker compose -f OpenEMR_for_FEC/docker/development-easy/docker-compose.yml exec -T mysql \
+  mariadb -u openemr -popenemr openemr < sql/fec_ghana_customization.sql
 ```
 
 **Windows (PowerShell):**
 ```powershell
-Get-Content ..\..\..\OpenEMR_for_FEC\sql\fec_ghana_customization.sql | `
-  docker compose exec -T mysql mariadb -u openemr -popenemr openemr
+# Run from the root of the cloned repo (openEmr4FEC/)
+Get-Content sql\fec_ghana_customization.sql | `
+  docker compose -f OpenEMR_for_FEC\docker\development-easy\docker-compose.yml exec -T mysql `
+  mariadb -u openemr -popenemr openemr
 ```
 
 **Windows (Git Bash):**
 ```bash
-docker compose exec mysql mariadb -u openemr -popenemr openemr \
-  < ../../../OpenEMR_for_FEC/sql/fec_ghana_customization.sql
+# Run from the root of the cloned repo (openEmr4FEC/)
+docker compose -f OpenEMR_for_FEC/docker/development-easy/docker-compose.yml exec -T mysql \
+  mariadb -u openemr -popenemr openemr < sql/fec_ghana_customization.sql
 ```
-
-> Run all commands from inside the `OpenEMR_for_FEC/docker/development-easy/` folder.
 
 ---
 
@@ -153,12 +155,12 @@ The Docker image is configured with `platform: linux/amd64`. Docker Desktop on A
 
 ```
 openEmr4FEC/
+├── sql/
+│   └── fec_ghana_customization.sql  # Ghana/FEC demographics patch (apply after first run)
 ├── OpenEMR_for_FEC/          # OpenEMR source code
 │   ├── docker/
 │   │   └── development-easy/ # Docker setup (start here)
 │   │       └── docker-compose.yml
-│   ├── sql/
-│   │   └── fec_ghana_customization.sql  # Ghana/FEC demographics patch
 │   ├── interface/            # UI controllers and templates
 │   └── src/                  # Modern PHP source (OpenEMR\ namespace)
 └── README.md                 # This file
